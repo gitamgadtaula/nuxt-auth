@@ -17,9 +17,9 @@ export async function _fetch(nuxt, path, fetchOptions) {
   {
     ...fetchOptions,
     credentials:'include'
-  }
+  } 
+  // Added credentials header to use cookies
   try {
-    console.log('fetch options',{joinedPath,newOptions})
     return $fetch(joinedPath, newOptions);
   } catch (error) {
     let errorMessage = `${ERROR_PREFIX} Error while requesting ${joinedPath}.`;
